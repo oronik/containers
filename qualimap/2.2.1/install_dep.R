@@ -1,12 +1,13 @@
 #installing deps
 #Updated from using bioclite to biocmanager
 #Supports R3.6 now
+#If specifying BiocManager version = "3.12" - requires R4.0
 
 # CountsQC
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install(version = "3.12")
+BiocManager::install()
 
 
 if(!require("optparse")) { 
