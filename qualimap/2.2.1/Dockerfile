@@ -20,7 +20,14 @@ RUN Rscript install_dep.R && \
 	Rscript scripts/installDependencies.r 
 	
 
+# make sure qualimap is executable
 
+RUN chmod +x /qualimap_v2.2.1/qualimap
+# Switch back to the ubuntu user so this tool (and the files written) are not owned by root
 
+RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 -m ubuntu
+USER ubuntu
+WORKDIR /
+ENV PATH /qualimap_v2.2.1:$PATH
 
 
