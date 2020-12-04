@@ -1,11 +1,24 @@
 FROM ubuntu:20.04
 
+ENV TZ=Africa/Johannesburg
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get update && apt-get install -y \ 
 	wget \
 	unzip \ 
-	default-jre \ 
-	r-base && \ 
-	wget https://bitbucket.org/kokonech/qualimap/downloads/qualimap_v2.2.1.zip
+	openjdk-14-jre \ 
+	r-base-core \
+	libcurl4-openssl-dev \ 
+	libxml2-dev && \ 
+	wget https://bitbucket.org/kokonech/qualimap/downloads/qualimap_v2.2.1.zip && \
+	unzip qualimap_v2.2.1.zip  
+
+COPY install_dep.R /
+
+RUN Rscript install_dep.R && \ 
+	cd qualimap_v2.2.1 && \
+	Rscript scripts/installDependencies.r 
+	
 
 
 
