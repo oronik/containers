@@ -48,8 +48,8 @@ WORKDIR /data
 
 ################## HOW TO DOWNLOAD DATABASE ######################
 
-# How to Download, say, MiniKraken DB_8GB (6.0 GB): 
-# A pre-built 8 GB database constructed from complete bacterial, archaeal, and viral genomes in RefSeq (as of Oct. 18, 2017) 
+# How to Download, say, MiniKraken DB_8GB (5.5 GB): 
+# 8 GB Kraken2 database built from the Refseq bacteria, archaea, and viral libraries and the GRCh38 human genome(as of April. 23, 2019) 
 # Option '--strip-components=1' is used so that the *.k2d files end up inside /kraken2-db and not elsewhere
 # RUN mkdir /kraken2-db && \
 # cd /kraken2-db && \
