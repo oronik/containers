@@ -1,7 +1,18 @@
 FROM ubuntu:20.04
-# version 0.13 is available on Dec 07 2020
-LABEL hifiasm.h3abionet="recent version cloned from th gitHub repo" 
 
+# Maintainer
+MAINTAINER Houcemeddine Othman "houceme.othman@bioinfo-on-dunes.net"
+MAINTAINER H3ABioNet "helpdesk.h3abionet.org"
+
+# Package information
+LABEL package.name="hifiasm"
+LABEL version="0.13 as at 10 Dec 2020"
+LABEL package.source="https://github.com/chhylp123/hifiasm"
+LABEL package.dependencies="zlib (version not specified)"
+LABEL package.description="Hifiasm is a fast haplotype-resolved de novo assembler for PacBio Hifi reads. It can assemble a human genome in several hours and works with the California redwood genome, one of the most complex genomes sequenced so far."
+LABEL website="https://github.com/chhylp123/hifiasm"
+LABEL license="MIT License"
+LABEL container.size="134MB"
 
 RUN apt-get update && apt-get install -y \ 
 	git \ 
@@ -18,9 +29,9 @@ RUN apt-get update && apt-get install -y \
 	rm -rf /var/lib/apt/lists/* \
 	cd / ; rm -rf /hifiasm/  
 
-RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 -m ubuntu
+RUN groupadd -r -g 1000 h3abionet && useradd -r -g h3abionet -u 1000 -m h3abionet
 
-USER ubuntu 
+USER h3abionet
 
 
 
