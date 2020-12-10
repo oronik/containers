@@ -14,7 +14,7 @@ LABEL package.description="A cross-platform and ultrafast toolkit for FASTA/Q fi
 LABEL website="http://www.bioinformatics.babraham.ac.uk/projects/fastqc"
 LABEL license="Open source and free for unlimited use"
 LABEL documentation="https://bioinf.shenwei.me/seqkit/usage/"
-LABEL container.size="522MB"
+LABEL container.size="540MB"
 
 
 # Followed instructions here: https://github.com/conda/conda-docker/tree/master/miniconda3/debian
@@ -45,7 +45,7 @@ WORKDIR /data/
 
 
 # Package testing (running)
-SeqKit -- a cross-platform and ultrafast toolkit for FASTA/Q file manipulation
+#SeqKit -- a cross-platform and ultrafast toolkit for FASTA/Q file manipulation
 
 #Version: 0.14.0
 
