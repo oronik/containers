@@ -1,7 +1,19 @@
 FROM ubuntu:20.04
-LABEL maintainer="houcem.othman@bioinfo-on-dunes.net, h3abionet"
-# version 0.20.1 is available on Dec 03 2020
-LABEL fastp.h3abionet="recent version cloned from th gitHub repo"       
+
+# Maintainer
+MAINTAINER Houcemeddine Othman "houcemeddine.othman@wits.ac.za"
+MAINTAINER H3ABioNet "helpdesk.h3abionet.org"
+
+# Package information
+LABEL package.name="Fastp"
+LABEL version="0.20.1 as at 10 Dec 2020"
+LABEL package.source="https://github.com/OpenGene/fastp"
+LABEL package.dependencies="zlib version not specified by the documentation"
+LABEL package.description="A tool designed to provide fast all-in-one preprocessing for FastQ files. This tool is developed in C++ with multithreading supported to afford high performance."
+LABEL website="https://github.com/OpenGene/fastp"
+LABEL license="MIT License"
+LABEL container.size="246MB"
+
  
 RUN apt-get update && apt-get install -y \ 
 	git \ 
@@ -15,9 +27,9 @@ RUN apt-get update && apt-get install -y \
 	apt-get autoclean && \ 
 	rm -rf /var/lib/apt/lists/* 
 
-RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 -m ubuntu
+RUN groupadd -r -g 1000 h3abionet && useradd -r -g h3abionet -u 1000 -m h3abionet
 
-USER ubuntu 
+USER h3abionet
 
 
 
