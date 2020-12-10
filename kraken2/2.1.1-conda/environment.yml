@@ -1,0 +1,17 @@
+# Use this file to install dependencies for this image:
+
+name: kraken2
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - kraken2=2.1.1
+  - perl>=5.26.2,<5.26.3.0a0
+  - libgcc-ng>=7.5.0
+  - libstdcxx-ng >=7.5.0
+  - blast
+  - rsync
+  - wget
+  - tar
+  - _openmp_mutex * *_gnu
