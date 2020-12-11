@@ -1,0 +1,13 @@
+# Use this file to install dependencies for this image:
+
+name: canu
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - canu=2.1.1
+  - perl
+  - perl-filesys-df
+  - openjdk
+  - gnuplot >=5.2
