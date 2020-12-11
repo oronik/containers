@@ -1,10 +1,19 @@
 #Download base image ubuntu 20.04
 FROM ubuntu:20.04
 
-# LABEL about the custom image
-LABEL maintainer="ghedirakais@gmail.com"
+# Maintainer
+MAINTAINER Kais Ghedira "ghedirakais@gmail.com"
+MAINTAINER H3ABioNet "helpdesk.h3abionet.org"
+
+# Package information
+LABEL package.name="MultiQC"
 LABEL version="0.1"
-LABEL description="This is custom Docker Image for \ the MultiQC Services."
+LABEL package.source="https://github.com/ewels/MultiQC"
+LABEL package.dependencies="conda 3"
+LABEL package.description="A modular tool to aggregate results from bioinformatics analyses across many samples into a single report. "
+LABEL website="https://multiqc.info/"
+LABEL license="GNU General Public License v3.0"
+LABEL container.size="1.03GB"
 
 # Disable Prompt During Packages Installation
 ARG DEBIAN_FRONTEND=noninteractive
